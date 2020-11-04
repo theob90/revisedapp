@@ -3,7 +3,7 @@ import Logo from '../../Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-import _Aux from '../../../_Aux/_Aux';
+import Auxiliary from '../../../Auxiliary/Auxiliary';
 
 
 const sideDrawer = (props) => {
@@ -13,7 +13,7 @@ const sideDrawer = (props) => {
         attachedClasses=[classes.SideDrawer, classes.Open];
     }
     return(
-        <_Aux>
+        <Auxiliary>
             {/* // to open kai closed einai apo to layout */}
             <Backdrop show = {props.open} clicked={props.closed}/>
                 <div className={attachedClasses.join(' ')}>
@@ -25,7 +25,7 @@ const sideDrawer = (props) => {
                         <NavigationItems />
                     </nav>
                 </div>
-        </_Aux>
+        </Auxiliary>
     );
 };
 

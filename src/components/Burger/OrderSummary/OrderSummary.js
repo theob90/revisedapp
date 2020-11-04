@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import _Aux from '../../../_Aux/_Aux';
+import Auxiliary from '../../../Auxiliary/Auxiliary';
 import Button from '../../UI/Button/Button';
 
 
@@ -22,7 +22,7 @@ class OrderSummary extends Component {
         });
 
         return (
-            <_Aux>
+            <Auxiliary>
                 <h3>Your Order</h3>
                 <p>a delicious with the following ingredients</p>
 
@@ -37,7 +37,7 @@ class OrderSummary extends Component {
                 <p>Continue to checkout</p>
                 <Button btnType="Danger" clicked={this.props.purchaseCanceled}>Cancel</Button>
                 <Button btnType="Success" clicked={this.props.purchaseContinue}>Continue</Button>
-            </_Aux>
+            </Auxiliary>
         );
     }
 

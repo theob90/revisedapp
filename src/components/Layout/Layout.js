@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import _Aux from '../../_Aux/_Aux';
+import Auxiliary from '../../Auxiliary/Auxiliary';
 import classes from './Layout.css'
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import Sidedrawer from '../Navigation/SideDrawer/SideDrawer';
@@ -22,14 +22,14 @@ sideDrawerToogleHandler = () => {
 
     render () {
         return (
-            <_Aux>
+            <Auxiliary>
             <Toolbar  drawerToogleClicked ={this.sideDrawerToogleHandler}/>
             <Sidedrawer  open={this.state.showSideDrawer }
             closed={this.sideDrawerClosedHandler}/>
             <main  className={classes.Content}>
                 {this.props.children}
             </main>
-        </_Aux>
+        </Auxiliary>
         );
     }
 

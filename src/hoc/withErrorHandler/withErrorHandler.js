@@ -1,17 +1,17 @@
 import React from 'react';
 import Modal from '../../components/UI/Modal/Modal';
-import _Aux from '../../_Aux/_Aux';
+import Auxiliary from '../../Auxiliary/Auxiliary';
 
 
 const withErrorHandler = (WrappedComponent, axios)  => {
     return (props) => {
         return(
-            <_Aux>
+            <Auxiliary>
                 <Modal >
                     something did not wrok!
                 </Modal>
                 <WrappedComponent {...props}/>
-            </_Aux>
+            </Auxiliary>
         );
     }
 }
