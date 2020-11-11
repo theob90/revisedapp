@@ -1,4 +1,4 @@
-
+import {connect} from 'react-redux';
 import React, { Component } from 'react';
 import Button from '../../../../components/UI/Button/Button';
 import classes from './ContactData.css';
@@ -95,8 +95,6 @@ class ContactData extends Component{
 
     orderHandler = (event) => { 
         event.preventDefault();
-        console.log(this.props.ingredients);
-
         //pairnw ta stoixeia apo t state
         const formData ={};
         for(let formElementIdentifier in this.state.orderForm){
@@ -104,7 +102,7 @@ class ContactData extends Component{
         }
         this.setState({loading: true});
         const order = {
-            ingredients: this.props.ingredients,
+            ingredients: this.props.ings,
             price: this.props.price,
             orderData: formData
 
@@ -182,5 +180,11 @@ class ContactData extends Component{
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        ings: state.ings,
+        price: state.totalPrice
+    }
+}
 
-export default ContactData;
+export default connect(mapStateToProps,null)(ContactData);
